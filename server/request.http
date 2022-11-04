@@ -1,0 +1,66 @@
+POST http://localhost:5000/api/user/register
+Content-Type: application/json
+
+{
+  "username": "jim1",
+  "email": "jim1@gmail.com",
+  "password": "jim123"
+}
+
+###
+
+POST http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{
+  "username": "zomboss",
+  "password": "letiendat"
+}
+
+###
+
+POST http://localhost:5000/api/getPost
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzJjMWIzMGNlYWYxMjllZTE5YmFlZDQiLCJpYXQiOjE2NjQwNDA5NTV9.OZnT1yhTJtU9uX2GEwiVni7gsjtmSQ4jga2iFiJO9mc
+
+{
+  "title": "React",
+  "description": "React",
+  "url": "react.com",
+  "status": "TO LEARN"
+}
+
+###
+
+GET http://localhost:5000/api/user/getUser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzJjMjYyMjc2M2ZkMDM3ZGNlYTNkNmUiLCJpYXQiOjE2NjQ0NTQ2Nzh9.MKFuSpLOIb7Yh9_c1dQ7z9n69TzDUX6oOu4BweWU4to
+
+###
+
+PUT http://localhost:5000/api/updateUser/632c1b30ceaf129ee19baed4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzJjMWIzMGNlYWYxMjllZTE5YmFlZDQiLCJpYXQiOjE2NjQ0NzM5MjR9.erc8f-SBm2E8HQyPP_jDdZK8D6mBafixk_XQun6NUs0
+
+{
+    "fullname": "Lê Tiến Đạt",
+    "email": "zomboss.zed@gmail.com",
+    "avatar": "https://res.cloudinary.com/zomboss/image/upload/v1661182037/test/rcu0hru5dhn7zg4fmcdz.jpg",
+    "age": "2000",
+    "gender": "Nam",
+    "mobile": "0826484173",
+    "address": "Đà Nẵng-VN",
+    "images": [
+      "https://luv.vn/wp-content/uploads/2022/06/gai-xinh-cap-3-luv-17.jpg",
+      "https://anhdephd.vn/wp-content/uploads/2022/04/hinh-nen-gai-xinh.jpg",
+      "https://www.dungplus.com/wp-content/uploads/2019/12/girl-xinh-1-480x600.jpg"
+    ],
+    "desc": "Tôi yêu em"
+}
+
+###
+GET http://localhost:5000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzJjMjYyMjc2M2ZkMDM3ZGNlYTNkNmUiLCJpYXQiOjE2NjQ0NTQ2Nzh9.MKFuSpLOIb7Yh9_c1dQ7z9n69TzDUX6oOu4BweWU4to
+
+###
+GET http://localhost:5000/api/user/getGenderUser?gender=woman
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzYxMDU2MzY3MTg1ZmMxMGIyNGM5NmUiLCJpYXQiOjE2NjczMDI4Mjd9.R6Xpa1Bf7sqOgqFzQK1vDaDhkrYQS90dy5rDqQdq7zI
