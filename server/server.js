@@ -28,7 +28,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/user", require("./routes/authRouter"));
+app.use("/api/user/v1/", require("./routes/authRouter"));
 app.use("/api", require("./routes/postRouter"));
 app.use("/api", require("./routes/upload"));
 app.use("/api/messages", require("./routes/messageRouter"));

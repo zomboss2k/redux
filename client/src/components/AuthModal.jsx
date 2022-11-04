@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register, reset, updateAuth } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const AuthModal = ({ setShowModal }) => {
@@ -24,22 +23,6 @@ const AuthModal = ({ setShowModal }) => {
 
   const navigate = useNavigate();
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
-  );
-
-  useEffect(() => {
-    if (isError) {
-      setError(message);
-    }
-
-    if (isSuccess || user) {
-      navigate("/");
-    }
-
-    dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
-
   const handleClick = () => {
     setShowModal(false);
   };
@@ -61,9 +44,6 @@ const AuthModal = ({ setShowModal }) => {
         email,
         password,
       };
-
-      console.log(userData);
-      dispatch(register(userData));
     }
   };
 
